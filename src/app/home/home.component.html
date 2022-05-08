@@ -1,7 +1,45 @@
-<div class="container">
-  <h1 class="title">
-    {{ 'PAGES.HOME.TITLE' | translate }}
-  </h1>
+<div class="container-fluid">
+  <h1>Sessions</h1>
+  <ul ngbNav #nav="ngbNav" class="nav-pills py-2">
+    <li ngbNavItem>
+      <button class="btn btn-lg btn-primary" (click)="openAddModal(content)">New</button>
+    </li>
+  </ul>
 
-  <a routerLink="/detail">{{ 'PAGES.HOME.GO_TO_DETAIL' | translate }}</a>
+  <div *ngIf="sessions$ | async as sessions" class="container">
+    <div class="row gy-2">
+      <div *ngFor="let session of sessions; trackBy: getSessionId; let i = index" class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{session.title}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{session.duration | duration}}</h6>
+            <a href="#" class="btn btn-secondary">Start</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">New ssion</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <!-- <div class="mb-3">
+        <label for="dateOfBirth">Date of birth</label>
+        <div class="input-group">
+          <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker
+            #dp="ngbDatepicker">
+          <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
+        </div>
+      </div> -->
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Add</button>
+  </div>
+</ng-template>
