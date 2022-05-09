@@ -1,0 +1,21 @@
+<form [formGroup]="addSessionForm" (ngSubmit)="onSubmit()" ngNativeValidate>
+    <div class="modal-header">
+        <h4 class="modal-title">Add a new Session</h4>
+    </div>
+    <div class="modal-body">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" placeholder="Title" formControlName="title" required
+                minlength="4" maxlength="60">
+        </div>
+        <div class="mb-3">
+            <label for="duration" class="form-label">Duration(minutes)</label>
+            <input type="number" class="form-control" id="duration" placeholder="Title" formControlName="duration"
+                required min="1" max="120">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="activeModal.dismiss()">Cancel</button>
+        <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+</form>

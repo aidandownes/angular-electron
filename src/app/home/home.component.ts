@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {Store} from '@ngrx/store';
+import {AddSessionComponent} from '../dialogs/add-session/add-session.component';
 
 import * as fromApp from '../reducers';
 import * as SessionActions from '../session.actions';
@@ -33,9 +34,8 @@ export class HomeComponent implements OnInit {
     return session.id;
   }
 
-  async openAddModal(content) {
-    const modalRef =
-        this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'});
-    const result = await modalRef.result;
+  openAddModal() {
+    this.modalService.open(
+        AddSessionComponent, {ariaLabelledBy: 'modal-basic-title'});
   }
 }
