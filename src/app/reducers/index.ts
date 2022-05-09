@@ -8,7 +8,6 @@ export interface State {
 }
 
 export const reducers: ActionReducerMap<State> = {
-
   [fromSession.sessionsFeatureKey]: fromSession.reducer,
 };
 
@@ -20,3 +19,9 @@ export const selectSessionState =
 
 export const selectSessions =
     createSelector(selectSessionState, fromSession.selectAll);
+
+export const selectSessionsMap =
+    createSelector(selectSessionState, fromSession.selectEntities);
+
+export const selectSessionIds =
+    createSelector(selectSessionState, fromSession.selectIds);

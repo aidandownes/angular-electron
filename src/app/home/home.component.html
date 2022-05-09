@@ -6,16 +6,10 @@
     </li>
   </ul>
 
-  <div *ngIf="sessions$ | async as sessions" class="container">
+  <div *ngIf="sessionIds$ | async as sessionIds" class="container">
     <div class="row gy-2">
-      <div *ngFor="let session of sessions; trackBy: getSessionId; let i = index" class="col-sm-6">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">{{session.title}}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">{{session.duration | duration}}</h6>
-            <a href="#" class="btn btn-secondary">Start</a>
-          </div>
-        </div>
+      <div *ngFor="let id of sessionIds" class="col-sm-6">
+        <app-session-card [session-id]="id"></app-session-card>
       </div>
     </div>
   </div>

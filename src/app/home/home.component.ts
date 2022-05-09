@@ -14,7 +14,7 @@ import {Session} from '../session.model';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  sessions$ = this.store.select(fromApp.selectSessions);
+  sessionIds$ = this.store.select(fromApp.selectSessionIds);
 
   constructor(
       private router: Router, private store: Store,
@@ -28,10 +28,6 @@ export class HomeComponent implements OnInit {
     ];
 
     this.store.dispatch(SessionActions.loadSessions({sessions}))
-  }
-
-  getSessionId(index: number, session: Session): string {
-    return session.id;
   }
 
   openAddModal() {
