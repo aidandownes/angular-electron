@@ -2,11 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {Store} from '@ngrx/store';
-import {AddSessionComponent} from '../dialogs/add-session/add-session.component';
 
+import * as SessionActions from '../actions/session.actions';
+import {AddSessionComponent} from '../dialogs/add-session/add-session.component';
+import {Session} from '../models/session.model';
 import * as fromApp from '../reducers';
-import * as SessionActions from '../session.actions';
-import {Session} from '../session.model';
 
 @Component({
   selector: 'app-home',

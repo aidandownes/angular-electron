@@ -1,9 +1,9 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {FormBuilder, Validators} from '@angular/forms';
+import {FormBuilder} from '@angular/forms';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {Store} from '@ngrx/store';
-import * as SessionActions from '../../session.actions';
-import {Session} from '../../session.model';
+import * as SessionActions from '../../actions/session.actions';
+import {Session} from '../../models/session.model';
 
 @Component({
   selector: 'app-add-session',
