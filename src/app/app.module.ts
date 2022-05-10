@@ -19,6 +19,7 @@ import {DetailModule} from './detail/detail.module';
 import {HomeModule} from './home/home.module';
 import * as fromApp from './reducers';
 import {SharedModule} from './shared/shared.module';
+import { ActivityModule } from './activity/activity.module';
 
 // AoT requires an exported function for factories
 const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader =>
@@ -47,6 +48,7 @@ const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader =>
     NgbModule,
     StoreDevtoolsModule.instrument(
         {maxAge: 25, logOnly: APP_CONFIG.production}),
+    ActivityModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

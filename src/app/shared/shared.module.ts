@@ -1,6 +1,7 @@
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import {RouterModule} from '@angular/router';
 import {TranslateModule} from '@ngx-translate/core';
 
 import {PageNotFoundComponent} from './components/';
@@ -12,7 +13,7 @@ import {DurationPipe} from './pipes/duration.pipe';
   declarations: [
     PageNotFoundComponent, WebviewDirective, SessionCardComponent, DurationPipe
   ],
-  imports: [CommonModule, TranslateModule, FormsModule],
+  imports: [CommonModule, TranslateModule, FormsModule, RouterModule],
   exports: [
     TranslateModule, WebviewDirective, FormsModule, SessionCardComponent,
     DurationPipe

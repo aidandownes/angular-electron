@@ -3,7 +3,8 @@
         <div class="card-body">
             <h5 class="card-title">{{session.title}}</h5>
             <h6 class="card-subtitle mb-2 text-muted">{{session.duration | duration}}</h6>
-            <a href="#" class="btn btn-secondary">Start</a>
+            <a [routerLink]="['/activity/new',  {title: session.title, duration: session.duration}]"
+                class="btn btn-secondary">Start</a>
         </div>
     </div>
 </ng-container>
