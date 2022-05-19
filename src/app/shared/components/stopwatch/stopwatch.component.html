@@ -1,0 +1,6 @@
+<ng-container *ngIf="stopwatch$ | async as stopwatch">
+    <p>{{stopwatch.title}}</p>
+    <p> {{stopwatch.duration|timestamp}}</p>
+    <button class="btn" (click)="start()">Start</button>
+    <button class="btn" (click)="pause()">Pause</button>
+</ng-container>

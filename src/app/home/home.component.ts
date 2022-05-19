@@ -6,7 +6,7 @@ import {Store} from '@ngrx/store';
 import * as SessionActions from '../actions/session.actions';
 import {AddSessionComponent} from '../dialogs/add-session/add-session.component';
 import {Session} from '../models/session.model';
-import * as fromApp from '../reducers';
+import * as fromSessionSelectors from '../selectors/session.selectors';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +14,7 @@ import * as fromApp from '../reducers';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  sessionIds$ = this.store.select(fromApp.selectSessionIds);
+  sessionIds$ = this.store.select(fromSessionSelectors.selectSessionIds);
 
   constructor(
       private router: Router, private store: Store,

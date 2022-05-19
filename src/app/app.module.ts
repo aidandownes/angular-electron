@@ -12,6 +12,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 import {APP_CONFIG} from '../environments/environment';
 
+import {ActivityModule} from './activity/activity.module';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {CoreModule} from './core/core.module';
@@ -19,7 +20,6 @@ import {DetailModule} from './detail/detail.module';
 import {HomeModule} from './home/home.module';
 import * as fromApp from './reducers';
 import {SharedModule} from './shared/shared.module';
-import { ActivityModule } from './activity/activity.module';
 
 // AoT requires an exported function for factories
 const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader =>
